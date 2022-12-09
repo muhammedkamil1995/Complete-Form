@@ -21,15 +21,7 @@ const progressCheck = document.querySelectorAll(".step .check");
 const bullet = document.querySelectorAll(".step .bullet");
 let current = 1;
 
-// function for form varification
-function formValidation() 
-  
-  // checking name length
-  if (name.value.length < 2 || name.value.length > 20) {
-    alert("Name length should be more than 2 and less than 21");
-    name.focus();
-    return false;
-  }
+
 
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
@@ -91,3 +83,5 @@ prevBtnFourth.addEventListener("click", function(event){
   progressText[current - 2].classList.remove("active");
   current -= 1;
 }); 
+
+
