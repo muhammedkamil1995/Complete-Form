@@ -1,11 +1,13 @@
 
 // Select all input elements for varification
-const name = document.getElementById("name");
+const fname = document.getElementById("fname");
+const lname = document.getElementById("lname");
 const email = document.getElementById("email");
 const phoneNumber = document.getElementById("phoneNumber");
+const date = document.getElementById("date");
 const gender = document.registration;
 const country = document.getElementById("language");
-const username = document.getElementById("name");
+const username = document.getElementById("username");
 const password = document.getElementById("password");
 
 const slidePage = document.querySelector(".slide-page");
@@ -25,6 +27,11 @@ let current = 1;
 
 nextBtnFirst.addEventListener("click", function(event){
   event.preventDefault();
+  if (fname.value === '' && lname.value === '') {
+    alert("first name and last name can not be empty")
+    
+    return
+  }
   slidePage.style.marginLeft = "-25%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
@@ -34,6 +41,11 @@ nextBtnFirst.addEventListener("click", function(event){
 
 nextBtnSec.addEventListener("click", function(event){
   event.preventDefault();
+  if (email.value === '' && phonenumber.value === '') {
+    alert("email address and phone number can not be empty")
+    
+    return
+  }
   slidePage.style.marginLeft = "-50%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
@@ -42,6 +54,11 @@ nextBtnSec.addEventListener("click", function(event){
 });
 nextBtnThird.addEventListener("click", function(event){
   event.preventDefault();
+  if (date.value === '' && gender.value === '') {
+    alert("input yout date of bath and select gender")
+    
+    return
+  }
   slidePage.style.marginLeft = "-75%";
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
@@ -49,12 +66,17 @@ nextBtnThird.addEventListener("click", function(event){
   current += 1;
 });
 submitBtn.addEventListener("click", function(){
+  if (username.value === '' && password.value === '') {
+    alert("input your usernam and password")
+    
+    return
+  }
   bullet[current - 1].classList.add("active");
   progressCheck[current - 1].classList.add("active");
   progressText[current - 1].classList.add("active");
   current += 1;
   setTimeout(function(){
-    alert("Your Form Successfully Signed up");
+    alert("You have Successfully Signed up");
     location.reload();
   },800);
 });
